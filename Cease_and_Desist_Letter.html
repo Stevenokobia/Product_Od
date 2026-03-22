@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cease and Desist Letter</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            line-height: 1.8;
+            color: #000;
+            background-color: #ffffff;
+        }
+        .sender-info {
+            margin-bottom: 30px;
+        }
+        .sender-info p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .date {
+            margin-bottom: 20px;
+        }
+        .recipient {
+            margin-bottom: 20px;
+        }
+        .subject {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 30px 0 20px 0;
+            text-transform: uppercase;
+        }
+        .content {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .content p {
+            margin-bottom: 15px;
+        }
+        .content ul {
+            margin: 15px 0 15px 30px;
+        }
+        .content li {
+            margin-bottom: 10px;
+        }
+        .closing {
+            margin-top: 50px;
+        }
+        .signature-line {
+            margin-top: 80px;
+            border-top: 2px solid #000;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        .signature-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .contact-info {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        @media print {
+            body {
+                background-color: #ffffff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sender-info">
+        <p><strong>CHIDERA STEVEN OKOBIA</strong></p>
+        <p>Rasaki St., Lagos</p>
+        <p>September 21, 1998</p>
+    </div>
+
+    <div class="date">
+        <p><strong>Date:</strong> <span id="currentDate"></span></p>
+    </div>
+
+    <div class="recipient">
+        <p><strong>PATRICK OBINNA IGWE</strong></p>
+        <p>Don Pedro St., Newsite, Lagos</p>
+    </div>
+
+    <div class="content">
+        <p><strong>Dear PATRICK OBINNA IGWE,</strong></p>
+
+        <div class="subject">
+            RE: DEFAMATION CEASE AND DESIST LETTER
+        </div>
+
+        <p>This is to notify you that you must <strong>cease and desist</strong> from the defamation of my character and reputation. This letter relates to the false, harmful, and defamatory rumours you have been spreading about me. In particular, the details of this unlawful activity are as follows:</p>
+
+        <ul>
+            <li>You called me a <strong>fraud star</strong>.</li>
+            <li>You stated that I am <strong>building a foundation for destruction</strong>.</li>
+        </ul>
+
+        <p>As a result of your false claims, you have damaged my reputation and character.</p>
+
+        <p>It is unlawful to make any direct or indirect false statement against a party that can damage that party's reputation by exposing such person to ridicule or harm to the person's trade, business, or profession.</p>
+
+        <p>Therefore, I request a <strong>formal apology</strong> from you. I also demand that you immediately cease and desist from all further defamation and that you <strong>retract your statement within one month</strong>.</p>
+
+        <p>In addition, I request that you compensate me with <strong>50,000 Naira only</strong> for the damages caused.</p>
+
+        <p>Hopefully, there will be no need for further legal recourse, but if this illegal activity persists, I will have no other choice but to institute legal action against you.</p>
+
+        <div class="contact-info">
+            <p>If you have any questions regarding this matter or would like to discuss it further, please contact me by phone at <strong>09015282786</strong>, or by email at <strong>chideraokobia@gmail.com</strong>.</p>
+        </div>
+    </div>
+
+    <div class="closing">
+        <p><strong>Yours faithfully,</strong></p>
+        
+        <div class="signature-line"></div>
+        
+        <p class="signature-name"><strong>CHIDERA STEVEN OKOBIA</strong></p>
+    </div>
+
+    <script>
+        // Auto-fill current date
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', options);
+    </script>
+</body>
+</html>
+
+
+
+
+
