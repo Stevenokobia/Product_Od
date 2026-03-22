@@ -5,18 +5,23 @@ import { connectDB } from "./config/db.js";
 import productRoute from "./route/product.route.js";
 import path from "path";
 
-dotenv.config();
+// Load .env only in development
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 
-// CORS (allow frontend in development)
-app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
-}));
+// CORS (allow frontend in development only)
+if (process.env.NODE_ENV === "development") {
+  app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+  }));
+}
 
 // API Routes
 app.use("/api/product", productRoute);
@@ -28,7 +33,7 @@ const _dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "frontend", "dist")));
 
-  // Catch-all route (FIXED for Express 5)
+  // Catch-all route (Express 5)
   app.use((req, res) => {
     res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
   });
@@ -37,11 +42,12 @@ if (process.env.NODE_ENV === "production") {
 // Port
 const PORT = process.env.PORT || 3000;
 
-// Start server
+// Start server and connect to DB
 connectDB()
   .then(() => {
+    console.log("MongoDB connected");
     app.listen(PORT, () => {
-      console.log(`Server started at http://localhost:${PORT}`);
+      console.log(`Server started on port ${PORT}`);
     });
   })
   .catch((err) => {
